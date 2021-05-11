@@ -67,6 +67,10 @@ public class MainController {
 
     }
     
+    /*
+     * Méthode évenement qui change le font de la zone de drag lorsqu'on la survole avec un fichier valide.
+     * 
+     */
     @FXML
     void setOnDragOver(DragEvent event) {
     	
@@ -88,6 +92,9 @@ public class MainController {
        	
     }
     
+    /*
+     * Méthode gérant le drag and drop et gardant en mémoire le chemin et nom du fichier.
+     */
     @FXML
     void setOnDragDropped(DragEvent event) {
     	
@@ -95,7 +102,7 @@ public class MainController {
           boolean success = false;
           if (db.hasFiles()) {
               success = true;
-              // Only get the first file from the list
+              // On prend seulement le premier fichier selectionné si il y en a plusieurs.
               final File file = db.getFiles().get(0);
               Platform.runLater(new Runnable() {
                   @Override
@@ -114,11 +121,8 @@ public class MainController {
           event.consume();
         }
       
-    @FXML
-    void setOnDragExited(DragEvent event) {
-
-    }
     
+   
 
     public void sayHelloWorld(ActionEvent actionEvent) {
 
