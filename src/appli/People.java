@@ -3,6 +3,7 @@ package appli;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Locale;
 
@@ -110,8 +111,10 @@ public class People implements Comparable<People> {
 
         double totalDuration = 0;
         LocalDateTime refTime = TEAMSDateTimeConverter.StringToLocalDateTime(this._start);
-        for (TEAMSPeriod period : this._periodList) {
-
+        Iterator<TEAMSPeriod> pers = this._periodList.iterator();
+        while (pers.hasNext())
+        {
+        	var period=pers.next();
             LocalDateTime begin = period.get_start();
             LocalDateTime end = period.get_end();
             double duration = period.getDurationInMinutes();
@@ -159,7 +162,15 @@ public class People implements Comparable<People> {
                 ", _stop='" + _stop + '\'' +
                 '}';
     }
-
+    public long getTotalAttendanceDuration() {
+        double totalDuration = 0;
+        // on utilise un iterator
+        Iterator<TEAMSPeriod> pers = this._periodList.iterator();
+        while (pers.hasNext()){
+            totalDuration += ((TEAMSPeriod) pers).getDurationInMinutes();
+        }
+        return Math.round(totalDuration);
+    }
     public String getDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
         return ( this._periodList.getFirst().get_start().format(formatter.withLocale(Locale.FRANCE)) );
