@@ -23,6 +23,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Classe Controller gérant le drag and drop et les éléments présents dans l'interface utilisateur.
+ * @author Alexandre
+ *
+ */
 public class MainController {
     public Label HelloWorld;
 
@@ -67,9 +72,9 @@ public class MainController {
 
     }
     
-    /*
+    /**
      * Méthode évenement qui change le font de la zone de drag lorsqu'on la survole avec un fichier valide.
-     * 
+     * @param event
      */
     @FXML
     void setOnDragOver(DragEvent event) {
@@ -92,7 +97,8 @@ public class MainController {
        	
     }
     
-    /*
+    /**
+     *@author Alexandre
      * Méthode gérant le drag and drop et gardant en mémoire le chemin et nom du fichier.
      */
     @FXML
@@ -123,7 +129,10 @@ public class MainController {
       
     
    
-
+/**
+ * 
+ * @param actionEvent
+ */
     public void sayHelloWorld(ActionEvent actionEvent) {
 
 
