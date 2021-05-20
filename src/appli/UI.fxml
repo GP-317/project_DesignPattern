@@ -19,9 +19,14 @@
               <items>
                 <AnchorPane fx:id="ZoneDrag" minHeight="0.0" minWidth="0.0" prefHeight="228.0" prefWidth="304.0">
                      <children>
-                        <Pane layoutX="9.0" layoutY="28.0" onDragDropped="#setOnDragDropped" onDragOver="#setOnDragOver" prefHeight="93.0" prefWidth="285.0">
+                        <Pane layoutX="9.0" layoutY="28.0" onDragDropped="#setOnDragDropped" onDragOver="#setOnDragOver" onMouseClicked="#parcourir" prefHeight="221.0" prefWidth="285.0">
                            <children>
-                              <Label fx:id="label_fichier" layoutX="46.0" layoutY="78.0" onMouseDragOver="#setOnDragOver" onMouseDragReleased="#setOnDragDropped" prefHeight="31.0" prefWidth="225.0" text="Déposez votre fichier ici">
+                              <Label fx:id="label_fichier" layoutX="60.0" layoutY="80.0" onMouseDragOver="#setOnDragOver" onMouseDragReleased="#setOnDragDropped" prefHeight="31.0" prefWidth="225.0" text="Déposez votre fichier">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="label_fichier1" layoutX="83.0" layoutY="111.0" onMouseDragOver="#setOnDragOver" onMouseDragReleased="#setOnDragDropped" prefHeight="31.0" prefWidth="111.0" text="Ou cliquez ici">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
