@@ -1,4 +1,4 @@
-package appli;
+package controller;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Collection;
+
+import model.People;
+import model.TEAMSDateTimeConverter;
+import model.TEAMSPeriod;
 
 /**
  * Classe régissant la structure HTML d'une sortie fichier de cette extension.
