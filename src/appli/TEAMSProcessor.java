@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class TEAMSProcessor{
@@ -87,11 +88,13 @@ public class TEAMSProcessor{
                 "</p>";
         html += "<div id=\"blockpeople\"> ";
 
-        for (People people : _allpeople) {
-
-            html += people.getHTMLCode();
+        // On utilise un iterator ici pour pacourir les données
+        Iterator<People> iterator = this._allpeople.iterator();
+        while(iterator.hasNext())
+        {
+            html += iterator.next().getHTMLCode();
         }
-
+        
 	    html += "</div> \n </body> \n </html>";
         return html;
     }
