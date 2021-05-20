@@ -1,4 +1,4 @@
-package appli;
+package model;
 
 import java.io.*;
 import java.util.LinkedList;

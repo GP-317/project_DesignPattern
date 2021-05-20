@@ -1,4 +1,4 @@
-package appli;
+package model;
 
 import javafx.util.converter.LocalDateTimeStringConverter;
 import java.time.format.DateTimeFormatter;

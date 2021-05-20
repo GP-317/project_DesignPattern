@@ -1,4 +1,4 @@
-package appli;
+package model;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import controller.fileWriteHTML;
 
 public class TEAMSProcessor{
 
@@ -41,7 +43,7 @@ public class TEAMSProcessor{
             TEAMSProcessor._allpeople = peopleByDuration;//filter.get_peopleList().values();
         }
     }
-
+    
     public Collection<People> get_allpeople() {
         return _allpeople;
     }
@@ -89,7 +91,7 @@ public class TEAMSProcessor{
         html += "<div id=\"blockpeople\"> ";
 
         // On utilise un iterator ici pour pacourir les données
-        Iterator<People> iterator = this._allpeople.iterator();
+        Iterator<People> iterator = _allpeople.iterator();
         while(iterator.hasNext())
         {
             html += iterator.next().getHTMLCode();

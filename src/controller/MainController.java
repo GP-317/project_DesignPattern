@@ -1,4 +1,4 @@
-package appli;
+package controller;
 
 import javafx.application.Platform;
 
@@ -15,6 +15,7 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.TEAMSProcessor;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class MainController {
     private Button b_generer;
 
     @FXML
-    void method_generer(ActionEvent event) {
+    void methd_generer(ActionEvent event) {
 
     }
     /**
@@ -159,7 +160,7 @@ public class MainController {
  * 
  * @param actionEvent
  */
-    public void sayHelloWorld(ActionEvent actionEvent) {
+    public void method_generer(ActionEvent actionEvent) {
 
 
         FileChooser fileChooser = new FileChooser();

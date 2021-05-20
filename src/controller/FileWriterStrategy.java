@@ -1,6 +1,8 @@
-package appli;
+package controller;
 
 import java.util.Collection;
+
+import model.People;
 
 /**
  * Interface implémentant le DP Strategy pour la structure et la sortie des fichiers,
