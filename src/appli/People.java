@@ -78,14 +78,6 @@ public class People implements Comparable<People> {
 
     }
 
-    public long getTotalAttendanceDuration() {
-        double totalDuration = 0;
-        for (TEAMSPeriod period : this._periodList) {
-            totalDuration += period.getDurationInMinutes();
-        }
-        return Math.round(totalDuration);
-    }
-
     public boolean isClosed() {
         return this._periodList.getLast().isEnded();
     }
