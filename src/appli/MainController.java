@@ -1,6 +1,7 @@
 package appli;
 
 import javafx.application.Platform;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,19 +10,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Files;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileTime;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.lang.System.Logger;
+import java.util.*;
+
 
 /**
  * Classe Controller gérant le drag and drop et les éléments présents dans l'interface utilisateur.
@@ -30,12 +30,20 @@ import java.util.LinkedList;
  */
 public class MainController {
     public Label HelloWorld;
-
+    
+    public String Chemin_Fichier;
+    
+    public String Nom_Fichier;
+    
+    public Stage primaryStage;
     @FXML
     private Pane ZoneDrag;
 
     @FXML
     private Label label_fichier;
+    
+    @FXML
+    private Label label_fichier1;
     
     @FXML
     private Label label_nomfichier;
@@ -71,6 +79,24 @@ public class MainController {
     void method_generer(ActionEvent event) {
 
     }
+    /**
+     * Méthode évenement qui gère l'event Click sur la zone de drag and drop, ouvrant ainsi une fenêtre parcourir.
+     * @param event
+     */
+    @FXML
+    void parcourir(MouseEvent event) {
+    	FileChooser fileChooser = new FileChooser();
+    	fileChooser.setTitle("Sélectionnez votre fichier");
+    	File fichier = fileChooser.showOpenDialog(primaryStage);
+    	if (fichier != null) {
+    		Chemin_Fichier = fichier.getAbsolutePath();
+    		  Nom_Fichier = fichier.getName();
+			  label_fichier.setText(Nom_Fichier);
+			  label_fichier1.setText("");
+        }
+    	
+    }
+   
     
     /**
      * Méthode évenement qui change le font de la zone de drag lorsqu'on la survole avec un fichier valide.
@@ -115,10 +141,10 @@ public class MainController {
                   public void run() {
                 
                       System.out.println(file.getAbsolutePath());
-					  String chemin_fichier = file.getAbsolutePath();
-					  String nom_fichier = file.getName();
-					 
-					  label_fichier.setText(nom_fichier);
+					  Chemin_Fichier = file.getAbsolutePath();
+					  Nom_Fichier = file.getName();
+					  label_fichier1.setText("");
+					  label_fichier.setText(Nom_Fichier);
 					  ZoneDrag.setStyle(null);
                   }
               });
