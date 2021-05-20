@@ -1,4 +1,4 @@
-package appli;
+package model;
 
 import java.util.*;
 
@@ -48,11 +48,13 @@ public class TEAMSAttendanceListAnalyzer {
 
     public void setStartAndStop(String start, String stop) {
         Collection<People> allpeople = _peopleList.values();
-        for (People person : allpeople) {
-            // IMPORTANT : set ending time before starting time, because it can't be possible
-            // to test if a period is before starting time if it has no ending time
-            person.forceEndTimeAt(stop);
-            person.forceStartTimeAt(start);
+        // On utilise un iterator ici pour pacourir les données
+        Iterator<People> pers = allpeople.iterator();
+        while(pers.hasNext())
+        {
+            var period = pers.next();
+            period.forceEndTimeAt(stop);
+            period.forceStartTimeAt(start);
         }
     }
 
