@@ -13,7 +13,7 @@ import model.TEAMSPeriod;
 
 /**
  * Classe régissant la structure HTML d'une sortie fichier de cette extension.
- * @author geo02
+ * @author Geoffrey&Jade
  *
  */
 public class fileWriteHTML implements FileWriterStrategy {

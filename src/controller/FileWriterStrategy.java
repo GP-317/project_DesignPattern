@@ -9,7 +9,7 @@ import model.People;
  * selon l'extension désirée (HTML, txt, xls, etc). De nouvelles sorties pourront
  * être implémentées par la suite.
  * 
- * @author geo02
+ * @author Geoffrey&Jade
  *
  */
 public interface FileWriterStrategy {
